@@ -1,0 +1,13 @@
+{
+  "name": "hacknights_api_physical_computing",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hacklabes/HackNights_API_Physical_Computing.git"
+  },
+  "author": "Thiago Hersan",
+  "dependencies": {
+    "express": "^4.13.3",
+    "rpi-gpio": "^0.7.0"
+  }
+}
