@@ -1,6 +1,6 @@
 var gpio = require('rpi-gpio');
  
-gpio.mode(MODE_BCM);
+gpio.mode(gpio.MODE_BCM);
 gpio.setup(20, gpio.DIR_OUT);
 gpio.setup(21, gpio.DIR_OUT);
 
