@@ -5,11 +5,11 @@ from gpiozero import LED, Button
 from signal import pause
 
 # set up 2 buttons using physical pull_down resistors and 0.01 seconds of "debouncing"
-yButton = Button(6,  pull_up=False, bounce_time=0.05)
+yButton = Button(13,  pull_up=False, bounce_time=0.05)
 rButton = Button(19, pull_up=False, bounce_time=0.05)
 
 # set up 2 pins for LEDs
-yLed = LED(20)
+yLed = LED(16)
 rLed = LED(21)
 
 # define behavior for rButton
