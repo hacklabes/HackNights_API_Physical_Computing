@@ -8,6 +8,9 @@
   "author": "Thiago Hersan",
   "dependencies": {
     "express": "^4.13.3",
+    "express-session": "^1.13.0",
+    "flutter": "0.0.5",
+    "twitter": "^1.2.5",
     "rpi-gpio": "^0.7.0"
   }
 }
