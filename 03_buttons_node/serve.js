@@ -17,3 +17,5 @@ gpio.on('change', function(channel, value) {
         gpio.write(21, value);
     }
 });
+
+setInterval(function(){}, 10000);
