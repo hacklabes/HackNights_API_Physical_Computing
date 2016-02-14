@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LED button over web</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function changeState(){
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", './toggle', true);
+            xmlHttp.send(null);
+        }
+
+        function checkState(){
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+                    if(!xmlHttp.responseText){
+                        document.getElementById("ledbutton").className = "bund";
+                        document.getElementsByTagName("marquee")[0].setAttribute("bgcolor", "#A0522D");
+                        return;
+                    }
+                    var responseJson = JSON.parse(xmlHttp.responseText);
+                    if(responseJson.state == 0){
+                        document.getElementById("ledbutton").className = "boff";
+                        document.getElementsByTagName("marquee")[0].setAttribute("bgcolor", "#990000");
+                    }
+                    else if(responseJson.state == 1){
+                        document.getElementById("ledbutton").className = "bon";
+                        document.getElementsByTagName("marquee")[0].setAttribute("bgcolor", "#009900");
+                    }
+                }
+            }
+            xmlHttp.open("GET", './state', true);
+            xmlHttp.send(null);
+            setTimeout(checkState, 600);
+        }
+        document.onload = checkState();
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="marquee">
+            <marquee width=100% height=32 bgcolor=yellow>AWESOME SITE!!</marquee>
+        </div>
+        <div id="introtext">Button-over-web: simplest IoT</div>
+        <div id="ledbutton" class="bund" onclick="changeState()"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+#container {
+    font-family: "Helvetica Neue";
+    width: 50%;
+}
+#introtext {
+    padding:10px;
+}
+marquee {
+    color: #FFFFFF;
+    font-size: 20pt;
+}
+#ledbutton {
+    cursor: pointer;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    padding: 14px 30px 14px 30px;
+    color: #FFFFFF;
+    transition: background-color 300ms ease-out;
+}
+.boff {
+    background-color: #990000;
+    border-color: #660000;
+}
+.boff:hover, .boff:focus {
+    background-color: #C80000;
+}
+.boff:before{
+    content: "OFF";
+}
+
+.bon {
+    background-color: #009900;
+    border-color: #006600;
+}
+.bon:hover, .bon:focus {
+    background-color: #00C800;
+}
+.bon:before{
+    content: "ON";
+}
+
+.bund {
+    background-color: #A0522D;
+    border-color: #8b4513;
+}
+.bund:hover, .bund:focus {
+    background-color: #cd853f;
+}
+.bund:before{
+    content: "???";
+}
