@@ -4,7 +4,8 @@ var Flutter = require('flutter');
 var Twitter = require('twitter');
 var keys = require('./oauth.json');
 
-var port = process.env.PORT || 8080;
+var HOST = "127.0.0.1";
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 app.use(session({resave:true, saveUninitialized:false, secret:'bangbangbang'}));
@@ -31,7 +32,7 @@ var flutter = new Flutter({
     cache: false,
     consumerKey: keys['CONSUMER_KEY'],
     consumerSecret: keys['CONSUMER_SECRET'],
-    loginCallback: 'http://127.0.0.1:'+port+'/callback',
+    loginCallback: 'http://'+HOST+':'+PORT+'/callback',
 
     // called eventually once user is logged in
     authCallback: function(req, res, next) {
@@ -101,4 +102,4 @@ app.get('/tweet', function(req, res){
     }
 });
 
-app.listen(port);
+app.listen(PORT);
